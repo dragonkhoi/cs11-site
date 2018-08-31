@@ -1,0 +1,35 @@
+#threeCanvas {
+  height: 50vh;
+  width: 100%;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.button-action {
+  background-color: #e2a0ff;
+  border-color: #e2a0ff;
+  color: white;
+}
+
+.button-action:hover {
+  transition: 0.3s;
+  background-color: #5f0089;
+  border-color: #5f0089;
+  color: #e2a0ff;
+}
+
+a {
+  color: #5f0089;
+}
+
+a:hover {
+  color: #2a063a;
+  text-decoration: none;
+}
