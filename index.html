@@ -39,14 +39,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a id="aboutLink" class="nav-link" href="#">About</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="masthead text-center text-white">
+    <!-- <header class="masthead text-center text-white">
       <div class="masthead-content">
         <div class="container">
           <h1 class="masthead-heading mb-0">CS 11: How to Make VR</h1>
@@ -58,7 +58,14 @@
       <div class="bg-circle-2 bg-circle"></div>
       <div class="bg-circle-3 bg-circle"></div>
       <div class="bg-circle-4 bg-circle"></div>
-    </header>
+    </header> -->
+    <section>
+      <div id="threeCanvas">
+        <div class="onThree">
+          <a id="applyButton" href="https://goo.gl/forms/lQ0WDqpOqfEkQn6a2" class="button-action btn btn-xl rounded-pill mt-5 ">Apply Now</a>
+        </div>
+      </div>
+    </section>
 
     <section>
       <div class="container">
@@ -148,7 +155,18 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="three/three.min.js"></script>
+    <script src="js/Detector.js"></script>
+  	<script src="js/stats.min.js"></script>
+  	<script src="js/dat.gui.min.js"></script>
 
+  	<script src="js/EffectComposer.js"></script>
+  	<script src="js/RenderPass.js"></script>
+  	<script src="js/ShaderPass.js"></script>
+  	<script src="js/CopyShader.js"></script>
+  	<script src="js/LuminosityHighPassShader.js"></script>
+    <script src="js/UnrealBloomPass.js"></script>
+    <script src="js/three_index.js"></script>
   </body>
 
 </html>

@@ -1,11 +1,3 @@
-$(document).ready(function (){
-    $("#aboutLink").click(function (){
-        $('html, body').animate({
-            scrollTop: $("#about").offset().top
-        }, 2000);
-    });
-});
-
 var threeCanvas = document.getElementById("threeCanvas");
 var scene = new THREE.Scene();
 //scene.background = new THREE.Color("#020005"); // new THREE.TextureLoader().load("img/purple-grad.jpg");
@@ -69,14 +61,18 @@ var pivot = new THREE.Group();
 var desktopTitleString = "CS11: How to Make VR";
 var phoneTitleString = "CS11:\nHow to\nMake VR";
 var titleStringToShow = desktopTitleString;
+var fontSize = 80;
+var phoneFontSize = 60;
 if (window.innerWidth < 600) {
   titleStringToShow = phoneTitleString;
+  fontSize = phoneFontSize;
 }
+
 loader.load( 'font/Quicksand Light_Regular.json', function ( font ){
   var geometry = new THREE.TextGeometry( titleStringToShow,
   {
     font: font,
-    size: 80,
+    size: fontSize,
     height: 5,
     curveSegments: 12,
     bevelEnabled: true,
@@ -111,8 +107,8 @@ var ambientLight = new THREE.AmbientLight( 0xffffff, 1 );
 scene.add( ambientLight );
 
 camera.position.z = 600;
-camera.position.x = 500;
-camera.position.y = -2100;
+camera.position.x = 10;
+camera.position.y = -10;
 
 window.onresize = function () {
   var width = threeCanvas.offsetWidth;
