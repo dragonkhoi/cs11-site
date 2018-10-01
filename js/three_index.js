@@ -4,6 +4,12 @@ $("#aboutLink").click(function() {
     }, 2000);
 });
 
+$("#assignmentsLink").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#assignments").offset().top - 70
+    }, 2000);
+});
+
 var threeCanvas = document.getElementById("threeCanvas");
 var scene = new THREE.Scene();
 //scene.background = new THREE.Color("#020005"); // new THREE.TextureLoader().load("img/purple-grad.jpg");
