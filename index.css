@@ -32,6 +32,11 @@ body {
   margin: 0;
 }
 
+.screenshot {
+  width: 80%;
+  margin: 10px;
+}
+
 .button-action {
   background-color: #5f0089;
   border-color: #5f0089;
