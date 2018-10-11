@@ -85,7 +85,7 @@
               <h1 class="display-4">
                 Assignment 3: Looking Good
               </h1>
-              <p>
+              <p class="assignment-body">
                 In this assignment, to be completed in class, you will
                 make the cubes move and explode.
               </p>
@@ -101,10 +101,41 @@
               <h2 class="display-5">
                 Move the Cubes
               </h2>
-              <p>
-                Create a new script called "CubeControl"
+              <p class="assignment-body">
+                Create a new script called <code>MoveTransform</code> and put it in your "xScripts" folder.
               </p>
               <img src="img/3-2-create-cubecontrol.JPG" class="screenshot" />
+               <p class="assignment-body">
+                 Create two variables: <code> Vector3 moveDir </code> and <code> float speed </code> and make
+                  them <code> private </code> and use <code> [SerializeField] </code> for both variables.
+               </p>
+               <p class="assignment-aside">
+                  Private variables are only accessible within the class, which keeps it safe from hard-to-track external modifications.
+                  <br>
+                  It is a standard coding convention to keep variables private unless it is necessary for public access.
+                  <br>
+                  [SerializeField] exposes the variable value in the inspector.
+               </p>
+               <p class="assignment-body">
+                 In the Update loop type <code> translate.Translate(moveDir * speed);</code>.
+               </p>
+              <img src="img/3-2-move-transform.JPG" class="screenshot" />
+              <p class="assignment-body">
+                Select the CubeCircle object. Attach the <code>MoveTransform</code> script to the CubeCircle object by dragging it onto the inspector.
+              </p>
+              <img src="img/3-2-attach-script.JPG" class="screenshot" />
+              <p class="assignment-body">
+                Set the <code> Move Dir </code> Z to -1. Set the <code> Speed </code> to 0.05. Hit <b> Play</b>.
+              </p>
+              <img src="img/3-2-cube-move-transform.gif" class="screenshot" />
+              <p class="assignment-body">
+                Move the CubeCircle object back on the z-axis so it is far away from the camera.
+              </p>
+              <img src="img/3-2-move-cubes-back.JPG" class="screenshot" />
+              <p class="assignment-body">
+                Hit play.
+              </p>
+              <img src="img/3-2-cube-come-at.gif" class="screenshot" />
           </div>
         </div>
       </div>
@@ -115,7 +146,7 @@
         <div class="row align-items-center">
           <div class="col-lg-12 order-lg-1">
               <p>
-                Assignment written by Ethan Aldrich and Connor Settle, October 2018.
+                Assignment written by Khoi Le, Ethan Aldrich and Connor Settle, October 2018 with contributions from Jerry Meng.
               </p>
           </div>
         </div>
