@@ -34,7 +34,7 @@ body {
 
 .screenshot {
   width: 80%;
-  margin: 10px;
+  margin: 0px 0px 60px 20px;
 }
 
 .button-action {
@@ -70,9 +70,13 @@ a:hover {
   font-size: 24px;
 }
 
+.assignment-question {
+  font-size: 24px;
+  font-weight: bold;
+  color: #9d26ff;
+}
+
 .assignment-aside {
   font-size: 16px;
   color: gray;
-  margin-top: 24px;
-  margin-bottom: 24px;
 }
