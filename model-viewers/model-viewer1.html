@@ -29,16 +29,16 @@
     <meta http-equiv="Content-Language" content="en-us" />
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+    <link href="../css/one-page-wonder.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="../index.css" />
 
 
     		<style>
@@ -74,44 +74,35 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
 
-        <a class="navbar-brand" href="#"> <img class="navbar-left" src="img/logo-trans.png" /> CS 11</a>
+        <a class="navbar-brand" href="#"> <img class="navbar-left" src="../img/logo-trans.png" /> CS 11</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a id="aboutLink" class="nav-link" href="index.html">About</a>
+              <a id="aboutLink" class="nav-link" href="../index.html">About</a>
             </li>
             <li class="nav-item">
-              <a id="assignmentsLink" class="nav-link" href="#assignments">Class Materials</a>
+              <a id="assignmentsLink" class="nav-link" href="../assignments.html">Class Materials</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div id="header" style="margin-top: 100px;">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-1">
-
-          </div>
-        </div>
-      </div>
-    </div>
     <div id="info">
       <h2 class="display - 5">
-        Helen Yao Lin, Alex Tae Lee, Lisa von Rabenau, Luke Sturm
+        Jocelyn Kang, Chase Lortie, Jason McRuer, Kevin Hu
       </h2>
     </div>
 
-		<script src="three/three.js"></script>
+    <script src="../three/three.js"></script>
 
-		<script src="js/DDSLoader.js"></script>
-		<script src="three/MTLLoader.js"></script>
-		<script src="three/OBJLoader.js"></script>
+		<script src="../js/DDSLoader.js"></script>
+		<script src="../three/MTLLoader.js"></script>
+		<script src="../three/OBJLoader.js"></script>
 
-		<script src="js/stats.min.js"></script>
+		<script src="../js/stats.min.js"></script>
 
 		<script>
 			var container, stats;
@@ -143,18 +134,17 @@
 				var onError = function ( xhr ) { };
 				THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 				new THREE.MTLLoader()
-					.setPath( 'student-work/team-2/' )
+					.setPath( '../student-work/team-1/' )
 					.load( 'materials.mtl', function ( materials ) {
 						materials.preload();
 						new THREE.OBJLoader()
 							.setMaterials( materials )
-							.setPath( 'student-work/team-2/' )
+							.setPath( '../student-work/team-1/' )
 							.load( 'model.obj', function ( object ) {
 								object.position.y = 45;
-                object.scale.x = 150;
-                object.scale.y = 150;
-                object.scale.z = 150;
-                object.rotation.y = -90;
+                object.scale.x = 200;
+                object.scale.y = 200;
+                object.scale.z = 200;
 								scene.add( object );
 							}, onProgress, onError );
 					} );
