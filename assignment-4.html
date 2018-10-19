@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5G5DSCT');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125425201-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125425201-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>How to Make VR: Introduction to Virtual Reality Design and Development</title>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="Content-Language" content="en-us" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G5DSCT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="#"> <img class="navbar-left" src="img/logo-trans.png" /> CS 11</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a id="aboutLink" class="nav-link" href="index.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a id="assignmentsLink" class="nav-link" href="#assignments">Class Materials</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="header" style="margin-top: 100px;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-1">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brief">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 order-lg-1">
+              <h1 class="display-4">
+                Assignment 4: Polish
+              </h1>
+              <p class="assignment-body">
+                In this assignment, to be completed in class, you will
+                polish how everything looks and feels.
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 order-lg-1">
+            <h2 class="display-5">
+              Cube explosions
+            </h2>
+            <p class="assignment-body">
+              Download <a href="unity/cube-explosion.unitypackage" target="_blank"> this package </a> and import it into Unity.
+            </p>
+            <img src="img/4-2-import-package.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Adjust materials to match. Take the BlueGlow.mat material from the package and put it on all your cubes.
+            </p>
+            <p class="assignment-aside">
+              If you're using your own materials, you'll want to make the Cube Explosion match.
+              See second photo below.
+            </p>
+            <img src="img/4-2-make-cubes-blue.JPG" class="screenshot" />
+            <p class="assignment-aside">
+              If you're using your own materials, select the CubeExplosion prefab and go to Particle System -> Renderer -> Material and select the same material as the one on your cubes:
+            </p>
+            <img src="img/4-2-adjust-explosion-material.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Edit your <code>SaberControl</code> script to contain a <code>private GameObject cubeExplosionPrefab</code>.
+              Remember to use <code>[SerializeField]</code> to expose the field in the inspector.
+              Then, use <code>Instantiate</code> to spawn it when we destroy our cubes.
+            </p>
+            <img src="img/4-2-saber-control-cubeexplosionprefab.JPG" class="screenshot" />
+            <p class="assignment-aside">
+              Instantiate takes in a GameObject (either a Prefab from Project or an existing GameObject in the scene) and creates a copy of it in the scene.
+            </p>
+            <p class="assignment-body">
+              Go into your Projects -> Assets -> xPrefabs and select the Lightsaber prefab. Drag the CubeExplosion prefab onto the slot in SaberControl.
+            </p>
+            <img src="img/4-2-put-explosion-on-saber.JPG" class="screenshot" />
+            <p class="assignment-question">
+              HW QUESTION: Why does editing the prefab make the lightsabers in the scene work automatically?
+            </p>
+            <p class="assignment-body">
+              Build to the Go and smash some cubes! (or test locally by enabling the OculusGoController after hitting play)
+            </p>
+            <img src="img/4-2-enable-go-controller-locally.JPG" class="screenshot" />
+            <h2 class="display-5">
+              Turn the Background Black
+            </h2>
+            <p class="assignment-body">
+              Go to OVRCameraRig -> TrackingSpace -> CenterEyeAnchor and set ClearFlags to solid color in the inspector. Choose Black from the color picker.
+            </p>
+            <p class="assignment-aside">
+              Having a black background will make it feel more polished.
+            </p>
+            <img src="img/4-2-black-bg.JPG" class="screenshot" />
+
+            <h2 class="display-5">
+              Add some sounds!
+            </h2>
+            <p class="assignment-body">
+              Download a song of your choosing, or use <a href="audio/bensound-dubstep.mp3" download> this dubstep song</a>. More free songs <a href="https://www.bensound.com/" target="_blank">here.</a>
+              <br>Download <a href="audio/lightsaber-swing.wav">this lightsaber swinging noise</a> by <a href="https://freesound.org/people/gyzhor/sounds/47125/" target="_blank"> gyzhor</a>.
+              <br>Download <a href="audio/lightsaber-slash.wav">this lightsaber slashing noise</a> by <a href="https://freesound.org/people/reesewong8/sounds/181863/" target="_blank"> reesewong8</a>.
+              <br>Create a folder in Project Assets called "xAudio" and put these files in that folder.
+            </p>
+            <p class="assignment-body">
+              You're going to create a "Audio Source," which is a Unity component for playing sounds. The easiest thing
+              to do when adding background music is to create a new object to hold it. Select TrackingSpace and right click it
+              and hit Create Empty. Name it MusicObject.
+            </p>
+            <p class="assignment-aside">
+              Audio sources are <b> spatialized </b> which means
+              an audio source's transform affects how it sounds. If an audio source is to the
+              right of the camera, the sound will play more strongly out of your right headphone.
+            </p>
+            <img src="img/4-2-add-musicobj.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Now add an audio source by clicking Add Component and typing in Audio Source.
+            </p>
+            <img src="img/4-2-add-audiosrc.JPG" class="screenshot" />
+            <p class="assignment-body">
+              In the Project naviate to Assets -> xAudio if you aren't already there, and drag the music file into the AudioClip slot of the Audio Source.
+            </p>
+            <img src="img/4-2-pluginsound.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Hit play and hear the music playing!
+            </p>
+            <p class="assignment-body">
+              In order for your cubes to move at the same speed in the editor as in headset, add this little bit to your <code>SaberControl</code>. You'll want to change
+              your speed to around 8 in the inspector.
+            </p>
+            <p class="assignment-aside">
+              <code>Update()</code> runs every frame. However, the framerate on the Oculus Go is different from the framerate on your computer.
+              This is because the Oculus Go has a slower processor and therefore a lower FPS. Using <code>Time.deltaTime</code> scales the motion
+              based on time elapsed instead of framerate.
+            </p>
+            <img src="img/4-2-time-delta-time.JPG" class="screenshot" />
+            <img src="img/4-2-speed-8.JPG" class="screenshot" />
+            <p class="assignment-question">
+              HW QUESTION: In your own words, why would the cubes move at a slower speed in the headset than in the editor if we didn't implement this fix?
+            </p>
+            <p class="assignment-body">
+              Take some time to adjust your cubes to the music. Highly advise that you take the time here
+              to delete all your cubes except one, make that one a prefab, and use a prefab for all the other cubes.
+            </p>
+            <p class="assignment-question">
+              HW QUESTION: Why would you want to make your cubes into prefabs?
+            </p>
+            <img src="img/4-2-cube-prefab.JPG" class="screenshot" />
+
+            <h2 class="display-5">
+              BUILD TO THE GO AND TRY OUT YOUR BEAT SABER!
+            </h2>
+            <p class="assignment-body">
+              If you can't hear the music, hit the Oculus button and quit to open the Oculus Home.
+              Go to Library -> Unknown Sources and then click the one you installed on the Go.
+            </p>
+            <video class="screenshot" width="640" height="480" autoplay loop>
+              <source src="vid/access-unknown-sources.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <video class="screenshot" width="640" height="480" autoplay loop>
+              <source src="vid/beat-saber-demo-polished.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <h2 class="display-5">
+              Finished early?
+            </h2>
+            <p class="assignment-body">
+              Start by adjusting small fixes. Click on the plane and remove the collider from the floor by right clicking the mesh collider and hitting Remove Component.
+              This way, we won't destroy the floor anymore.
+            </p>
+            <p class="assignment-body">
+              Go ahead and give the lightsaber a cool color. I chose purple.
+            </p>
+            <p class="assignment-body">
+              If you have time, we'll add even more sounds. Open up <code>SaberControl</code> and let's add some more sound effects.
+            </p>
+            <img src="img/4-2-setup-audio-saber.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Go into the Assets -> xPrefabs and click on the Lightsaber prefab. Add an AudioSource and uncheck the PlayOnAwake box. Then navigate to xAudio. Drag the correct audio clips from Assets -> xAudio into the SaberControl audio clip slots.
+            </p>
+            <img src="img/4-2-saber-audio-source.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Then navigate to xAudio. Drag the correct audio clips from Assets -> xAudio into the SaberControl audio clip slots.
+            </p>
+            <img src="img/4-2-saber-audios.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Go into <code>SaberControl</code> and add this line of code, so that smashing the cubes makes a noise.
+            </p>
+            <img src="img/4-2-play-slash.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Also in <code>SaberControl</code>, add these lines of code, so that swinging the saber around makes a noise.
+            </p>
+            <img src="img/4-2-audio-swing.JPG" class="screenshot" />
+
+            <h2 class="display-5">
+              You may have noticed my scene kinda glows. <br>If you have time, let's <b>Glow up!</b>
+            </h2>
+            <p class="assignment-body">
+              Go to the Asset Store and look up Unity Post Processing Stack. Download and import it.
+            </p>
+            <img src="img/4-2-post-processing.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Go to the OVRCameraRig --> TrackingSpace --> CenterEyeAnchor and click Add Component. Type in "Post Processing" and select "Post Processing Behaviour" when it shows up.
+            </p>
+            <img src="img/4-2-post-processing-behaviour.JPG" class="screenshot" />
+            <p class="assignment-body">
+              In the Project view, make sure you go into PostProcessing. Right click and create a new folder called "Profiles."
+            </p>
+            <img src="img/4-2-create-profiles-folder.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Go into that folder and create a new profile by right clicking and selecting Create --> Post Processing Profile. Name your profile "BloomProfile."
+            </p>
+            <img src="img/4-2-create-profile.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Select the BloomProfile and check the dot next to "Bloom." Set the Threshold to 0.7.
+              More about bloom and post-processing <a href="https://docs.unity3d.com/Manual/PostProcessing-Bloom.html" target="_blank"> here</a>.
+            </p>
+            <img src="img/4-2-bloom-profile.JPG" class="screenshot" />
+            <p class="assignment-body">
+              Select OVRCameraRig --> TrackingSpace --> CenterEyeAnchor and drag the BloomProfile into the empty slot on the <code>PostProcessingBehaviour</code>.
+              The scene should have a soft glow around the bright objects! If you build, it'll take a while to package all the post-processing shader variants, but it's worth it.
+            </p>
+            <img src="img/4-2-add-profile.JPG" class="screenshot" />
+            <img src="img/4-2-soft-glow.JPG" class="screenshot" />
+            <video class="screenshot" width="640" height="480" autoplay loop>
+              <source src="vid/beat-saber-demo-color.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="close">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 order-lg-1">
+              <p>
+                Assignment written by Khoi Le, Ethan Aldrich and Connor Settle, October 2018 with contributions from Jerry Meng.
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small">Copyright &copy; Rabbit Hole VR 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="three/three.min.js"></script>
+    <script src="js/Detector.js"></script>
+  	<script src="js/stats.min.js"></script>
+  	<script src="js/dat.gui.min.js"></script>
+
+  	<script src="js/EffectComposer.js"></script>
+  	<script src="js/RenderPass.js"></script>
+  	<script src="js/ShaderPass.js"></script>
+  	<script src="js/CopyShader.js"></script>
+  	<script src="js/LuminosityHighPassShader.js"></script>
+    <script src="js/UnrealBloomPass.js"></script>
+    <script src="js/three_index.js"></script>
+  </body>
+
+</html>
