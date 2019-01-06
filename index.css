@@ -1,0 +1,90 @@
+#threeCanvas {
+  height: 100vh;
+  width: 100%;
+}
+.onThree {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 600px) {
+  .onThree {
+    top: 70%;
+  }
+}
+#howToMakeVR {
+  top: 50%;
+  left: 50%;
+  color: white;
+}
+#applyButton {
+
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.screenshot {
+  width: 80%;
+  margin: 0px 0px 60px 20px;
+}
+
+.three-container {
+  width: 100vw;
+  left: 0;
+  margin: 0px 0px 60px 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+.button-action {
+  background-color: #5f0089;
+  border-color: #5f0089;
+  color: #CCCCCC;
+  box-shadow: 0 2px 30px rgba(113, 0, 163, 1);
+}
+
+.button-action:hover {
+  transition: 0.3s;
+  background-color: #530077;
+  border-color: #530077;
+  color: #FFFFFF;
+  box-shadow: 0 2px 30px rgba(255, 255, 255, 0.4);
+}
+
+.button-action:active, .button-action:focus
+{
+  border-color: #530077;
+}
+
+a {
+  color: #5f0089;
+}
+
+a:hover {
+  color: #2a063a;
+  text-decoration: none;
+}
+
+.assignment-body {
+  font-size: 24px;
+}
+
+.assignment-question {
+  font-size: 24px;
+  font-weight: bold;
+  color: #9d26ff;
+}
+
+.assignment-aside {
+  font-size: 16px;
+  color: gray;
+}
