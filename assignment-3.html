@@ -104,16 +104,13 @@
             <h2 class="display-5">
               Lightsaber to Hand
             </h2>
+            <p> Open the Unity project you started for homework 1. Go to the scene where you made your lightsaber, and
+              make your lightsaber into a prefab. (Drag it from the scene into your Projects view). Now that you have the lightsaber as a prefab,
+            you can easily place it into other scenes.</p>
+            <p> Now, please download our starter package <a href="unity/week2.unitypackage"> here</a>. Go into your Unity and at the top hit Assets -> Import Package -> Custom package,
+              and select the package you just downloaded.</p>
             <p class="assignment-body">
-              In your project, go into Oculus --> VR --> Prefabs and drag the <code>TrackedRemote</code> prefab onto LeftHandAnchor and RightHandAnchor to child it.
-            </p>
-            <img src="img/3-2-tracked-remote.JPG" class="screenshot" />
-            <p class="assignment-body">
-              Click the <code> TrackedRemote </code> under the LeftHandAnchor, and set it to <code>L Tracked Remote</code> in the inspector.
-            </p>
-            <img src="img/3-2-left-remote.JPG" class="screenshot" />
-            <p class="assignment-body">
-              Move your lightsaber (the cylinder we made <a href="assignment-2.html"> last week </a>) under the OculusGoControllerModel.
+              Open up the RHVRGoCameraRig prefab and find the right hand controller. Move your lightsaber (the cylinder we made <a href="assignment-2.html"> last week </a>) under the OculusGoControllerModel.
             </p>
             <p class="assignment-aside">
               Make sure your lightsaber has a <b> Capsule Collider </b> with <b> Is Trigger </b> checked, a <b> Rigidbody </b> with <b> Use Gravity </b> UNchecked and <b> Is Kinematic </b> checked, and a <code> SaberControl </code> script.
@@ -126,38 +123,9 @@
               Scale: <code> X: 0.1 - Y: 2 - Z: 0.1 </code>
             </p>
             <img src="img/3-2-transform-light-saber.JPG" class="screenshot" />
-            <p class="assignment-body">
-              In your project, create a new folder called <code> xPrefabs </code> and drag the lightsaber from the scene into the project view.
-            </p>
-            <img src="img/3-2-lightsaber-to-prefab.JPG" class="screenshot" />
-            <p class="assignment-aside">
-              Prefabs are GameObjects that have basically been saved into your project with all of their settings. You can easily reuse them this way,
-              or create new GameObjects using these as templates!
-            </p>
-            <p class="assignment-body">
-              Grab the prefab you just created from the project view and drag it under the RightHandAnchor's OculusGoControllerModel. Notice how it has all
-              the same settings as the other one!
-            </p>
-            <img src="img/3-2-lightsaber-under-right-remote.JPG" class="screenshot" />
-            <p class="assignment-aside">
-              <b> Bonus </b>: If you adjust one Lightsaber's <b> Scale </b> and click APPLY (not shown in the above photo, but
-              under the object name where it says Prefab, all the way on the right), the other one will update too!
-            </p>
-            <p class="assignment-question">
-              HW QUESTION: In your own words, explain what a Prefab is.
-            </p>
-            <p class="assignment-body">
-              Deactivate the lightsaber on the hand that you're not going to use. My Oculus Go has right handedness on, so I'll turn off the left hand lightsaber.
-              Deactivating an object means it will not be visible, its colliders don't affect other ones, and its scripts don't run.
-            </p>
-            <p class="assignment-aside">
-              Usually, Oculus will handle handedness disabling for us, but our SaberControl code will make the two lightsabers destroy each other. We can fix that later
-              using a Tag check.
-            </p>
-            <img src="img/3-2-deactivate-lightsaber.JPG" class="screenshot" />
             <br>
             <h2 class="display-5">
-              BUILD TO THE GO AND SWING THE SABER AROUND !!!!
+              BUILD TO THE GO AND SWING THE SABER AROUND !!!! (this is where the <a href="assignment-0.html">pre-lab instructions</a> will come in handy)
             </h2>
             <br>
               <h2 class="display-5">
@@ -186,23 +154,24 @@
                </p>
               <img src="img/3-2-move-transform.JPG" class="screenshot" />
               <p class="assignment-body">
-                Select the CubeCircle object. Attach the <code>MoveTransform</code> script to the CubeCircle object by dragging it onto the inspector.
+                Create an empty object named ObstaclesParent and give it some cubes as children. (In the screenshots, it is called "CubeCircle").
+                Select the ObstaclesParent object. Attach the <code>MoveTransform</code> script to the ObstaclesParent object by dragging it onto the inspector.
               </p>
               <img src="img/3-2-attach-script.JPG" class="screenshot" />
               <p class="assignment-body">
                 On the MoveTransform script, set the <code> Move Dir </code> Z to -1. Set the <code> Speed </code> to 0.05. Hit <b> Play</b>.
               </p>
-              <img src="img/3-2-cube-move-transform.gif" class="screenshot" />
+              <img src="img/3-2-cube-move-transform-1.gif" class="screenshot" />
               <p class="assignment-body">
-                Move the CubeCircle object back on the z-axis so it is far away from the camera.
+                Move the ObstaclesParent object back on the z-axis so it is far away from the camera.
               </p>
               <img src="img/3-2-move-cubes-back.JPG" class="screenshot" />
               <p class="assignment-body">
                 Hit play.
               </p>
-              <img src="img/3-2-cube-come-at.gif" class="screenshot" />
+              <img src="img/3-2-cube-come-at-1.gif" class="screenshot" />
               <p class="assignment-body">
-                Go into the CubeCircle object and make more cubes that are spread out, but make sure they are narrow.
+                Go into the ObstaclesParent object and make more cubes that are spread out, but make sure they are narrow.
                 Adjust the speed to your liking, 0.05 is normal, but 0.1 is harder.
               </p>
               <img src="img/3-2-more-cubes.JPG" class="screenshot" />
