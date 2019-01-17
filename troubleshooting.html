@@ -104,16 +104,27 @@
                 Build Settings
               </h2>
               <p> If you're having build issues. Check to make sure your build settings match these. </p>
-              <p> Click File -> Build Settings.
-                Make sure that the scene you're working on is the top of the list. You can hit "Add Open Scenes."
-                Make sure you're on Android.
-                Turn Build System from Gradle to Internal.
-                Click "Player Settings."
-                Android Target API shouldbe 5.0 Lollipop.
-                Your package name should be "com.[yourname].[assignmentname]"
-                Your .NET Scripting Runtime should be 3.5 not 4.
-                In XR Settings, you should check "Virtual Reality Supported."
-                In the VR SDKs list, click the little "+" and add "Oculus." </p>
+              <p> Click <b>File -> Build Settings</b>. </p>
+              <ul>
+                <li> Make sure that the scene you're working on is the top of the list. You can hit "Add Open Scenes." </li>
+                <li><img src="images/addOpenScenes.png"></li>
+                <li> Make sure you're on Android. </li>
+                <li><img src="images/platform.png"></li>
+                <li> Turn Build System from Gradle to Internal. </li>
+                <li><img src="images/buildSystem.png"></li>
+              </ul>
+              <p> Click <b>Player Settings</b>. </p>
+              <img src="images/playerSettings.png">
+              <ul>
+                <li> Android Target API should be 5.0 Lollipop. </li>
+                <li> Your package name should be "com.[yourname].[assignmentname]" </li>
+                <li><img src="images/apiLevel.png"></li>
+                <li> Your .NET Scripting Runtime should be 3.5 not 4. </li>
+                <li><img src="images/scriptingRuntime.png"></li>
+                <li> In XR Settings, you should check "Virtual Reality Supported." </li>
+                <li> In the VR SDKs list, click the little "+" and add "Oculus." </li>
+                <li><img src="images/xrSettings.png"></li>
+              </ul>
           </div>
         </div>
       </div>
@@ -127,6 +138,8 @@
                 Unity 2018.3.0f2 Oculus Issues.
               </h2>
               <p> You should upgrade to the latest Unity. If that doesn't work, just comment out all the offending lines of code. </p>
+              <p> Just double click on any compile errors related to Oculus. Your editor should open and take you right to the line of the error, and you can comment it out. </p>
+              <p> It's often best to start with the top compile error, as the first error will often spawn the rest of them, so fixing the first might fix a lot of them. </p>
           </div>
         </div>
       </div>
@@ -157,6 +170,9 @@
               </p>
               <p class="assignment-body">
                 Put on your Oculus Go and use the controller to say "Trust this Computer."
+              </p>
+              <p class="assignment-body">
+                Make sure to check the "Keep my decision for all future instances" box. Otherwise, you'll have to trust the computer every time.
               </p>
           </div>
         </div>
