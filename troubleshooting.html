@@ -116,7 +116,8 @@
               <p> Click <b>Player Settings</b>. </p>
               <img src="images/playerSettings.png">
               <ul>
-                <li> Android Target API should be 5.0 Lollipop. </li>
+                <li> Android Minimum API should be "5.0 Lollipop." </li>
+                <li> Android Target API should be "Highest Installed." </li>
                 <li> Your package name should be "com.[yourname].[assignmentname]" </li>
                 <li><img src="images/apiLevel.png"></li>
                 <li> Your .NET Scripting Runtime should be 3.5 not 4. </li>
@@ -130,7 +131,33 @@
       </div>
     </section>
 
-    <section id="buildSettings">
+    <section id="buildToGo">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 order-lg-1">
+              <h2 class="display-5">
+                How to Build to the Oculus Go
+              </h2>
+              <ol>
+                <p> Plug in your Oculus Go. </p>
+                <p> Turn and put your Oculus Go on and hold the Oculus button to unlock it. </p>
+                <p> Point and click "Always Trust This Computer" and click "Enable USB Debugging." </p>
+                <p> Ensure your build settings are correct, as <a href="#buildSettings">above.</a> </p>
+                <p> Ensure the scene you are working on is the first in the list of Scenes in your build settings. Also make sure your package name is not "com.oculus.Sample."</p>
+                <p> Click "Build and Run." </p>
+                <p> You can create a new folder called "Builds" and click into it. You can name your file "main.apk" or "beat-saber.apk". </p>
+                <p> Click Ok and wait for Unity to build. </p>
+                <p> Put your Go on and hold the Oculus button to unlock it. Your experience should start automatically. </p>
+                <p> If it does not start, click on the Oculus button to go to the Oculus Home. </p>
+                <p> Select "Library" then "Unknown Sources" and look for the package name that you put into Unity. </p>
+
+              </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="unity20183">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12 order-lg-1">
