@@ -81,6 +81,7 @@
       </div>
     </section>
 
+
     <section id="brief">
       <div class="container">
         <div class="row align-items-center">
@@ -92,6 +93,25 @@
                 In this assignment, to be completed at home, you will set up your machine for
                 VR development for the Oculus Go.
               </p>
+              <p>(adapted from <a href="https://medium.com/inborn-experience/how-to-build-an-app-for-the-oculus-go-from-start-to-finish-with-unity-cb72d931ddae">this Medium article</a> )
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="findVR">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 order-lg-1">
+              <h2 class="display-5">
+                Go find 3 apps
+              </h2>
+              <p>
+                To get familiar with what exists in VR, we're asking that you research some popular VR apps or
+                use cases. Please bring 3 names of examples of VR apps or use cases that you are really interested in, as
+                well as a few sentences about why you are interested in them. A good starting place is <a href="https://www.oculus.com/experiences/rift/"> the Oculus website</a>.
+              </p>
           </div>
         </div>
       </div>
@@ -101,15 +121,114 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12 order-lg-1">
-              <h2 class="display-5">
-                Download Software
-              </h2>
-              <h3 class="display-6">
-                Unity
-              </h3>
-              <p>
-                We'll be using Unity 2018.2.8f1, please download it <a href="https://store.unity.com/download?ref=personal"> here </a>
-              </p>
+            <h4><u> > Download Unity</u></h4>
+            <h5>Important: Unity's latest version bungled Oculus's main plugin, so we need to install a previous version of Unity.</h5>
+            <ul>
+            	<li> Either download Unity Hub for your OS from links in this <a href="https://blogs.unity3d.com/2018/01/24/streamline-your-workflow-introducing-unity-hub-beta/">blog post</a>...</li>
+            	<li>If you choose Unity Hub, go to the <b>Installs</b> tab and download version 2017.4.24f1 LTS
+            	<li> Or, download Unity 2017.4.24 directly from this <a href="https://unity3d.com/get-unity/download/archive?_ga=2.31419000.696884312.1554221101-1940948622.1537235841">page</a>.</li>
+            </ul>
+
+            <ul>
+                <li>Check Documentation (highly recommended) and <b>Android Build Support</b> when installing Unity, whether you do so from the Unity Hub or just from the website.</li>
+                <li>(Khoi installed UWP, Vuforia, WebGL, and Windows for other projects. If you're interested, ask Khoi about it!)</li>
+                <li><img src="images/pasted image 0.png"></li>
+                <li><b>If you've already downloaded Unity sometime in the past, but didn't check the Android Build Support when you installed</b>, you can enable it fairly easily. First, open any Unity project, and go to <b>File -> Build Settings</b>. From there, choose <b>Android</b>. It should say "No Android module loaded." Click <b>Open Download Page</b>.</li>
+                <li><img src="images/androidsupport.png"></li>
+                <li>Run the program that was downloaded. You will have to exit out of Unity during the installation, just do so and it will continue automatically. Once the installer is done, you can restart Unity and should be able to build for Android.</li>
+            </ul>
+
+            <h4><u><a href="https://developer.android.com/studio/install">> Download Android Studio</a></u></h4>
+
+            <ul>
+              <li>On the welcome screen, click <b>Configure</b> on the bottom right</li>
+                <li><img src="images/android_studio.png"></li>
+                <li>Click <b>SDK Manager</b></li>
+                <li>Under the SDK Platforms tab ensure API levels 21-27 are checked, if not, check them and wait for them to download</li>
+                <li>On the <b>SDK Tools</b> tab, check the box next to Show Package Details in the lower right corner of the window.</li>
+                <li>Under <b>Android SDK Build-Tools 28-rc2</b>, make sure <b>27.0.3</b> is checked DO NOT CHECK ANYTHING THAT HAS 'rc' in it (28.0.2 might mess with your Gradle build).</li>
+                <li>Also under SDK Tools make sure the following are checked:
+                  <ul>
+                      <li>LLDB</li>
+                        <li>Android SDK Platform-Tools</li>
+                        <li>Android SDK Tools 25.2.5</li>
+                        <li>NDK</li>
+                    </ul>
+                </li>
+                <li>Click <b>Apply</b>. This will install everything you selected above on the SDK tabs.</li>
+                <li>Back on the welcome screen, click <b>Configure</b> on the bottom right, and then <b>Project Defaults > Project Structure</b></li>
+                <li>Here you'll find the file paths for the SDK, JDK and NDK. <b>Copy these down in a text editor; we'll need these shortly</b></li>
+                <li><img src="images/sdk_location.png"></li>
+            </ul>
+
+            <h4><u>> Set Environment Variables</u></h4>
+            <h5><u>Windows:</u></h5>
+            <ul>
+              <li>On your Windows machine, search for "Environment Variables". This should take you to Control Panel > System Properties. Go to the Advanced Tab, then to the <b>Environment Variables</b> button in the lower right.</li>
+                <li>In the top section, set/modify/add the following variables:
+                  <ul>
+                      <li>Set the environment variable <b>JAVA_HOME</b> to the JDK file path you just saved.</li>
+                        <li>Set the environment variable <b>ANDROID_HOME</b> to the Android SDK file path you just saved.</li>
+                        <li>Set the environment variable <b>ANDROID_NDK_HOME</b> to the Android NDK file path you just saved.</li>
+                        <li>Add the JDK tools directory to your <b>PATH</b>, ie C:\Program Files\Android Studio\jre\bin</li>
+                    </ul>
+                </li>
+                <li>One of the errors I kept running into when building for Android in Unity was "Unable to list target platforms". It's vague and frustrating. Here's how to fix it (taken from <a href="https://stackoverflow.com/questions/42538433/not-finding-android-sdk-unity#">this stackoverflow post</a>):
+                  <ul>
+                  <li>Delete android sdk 'tools' folder : [Your Android SDK root]/tools -> tools</li>
+                        <li>Download <a href="http://dl-ssl.google.com/android/repository/tools_r25.2.5-windows.zip">SDK Tools</a></li>
+                        <li>Extract that to Android SDK root</li>
+                    </ul>
+                </li>
+                <li>ADB should be automatically installed through Android Studio.
+                  If not, check the SDK Manager. Download ADB Oculus Go tools <a href="https://developer.oculus.com/downloads/package/oculus-go-adb-drivers/">here</a> (WINDOWS ONLY)</li>
+            </ul>
+            <h5><u>Mac:</u></h5>
+            <ul>
+              <li>On your Mac machine, open Terminal.</li>
+                <li>Type 'touch ~/.bash_profile' (only the words inside the quotes)</li>
+                <li>Type 'open ~/.bash_profile' (only the words inside the quotes), this will open the file in TextEdit</li>
+                <li>Insert the following lines into the file:
+                  <ul>
+                      <li><i>export JAVA_HOME=[JDK Path you just saved]</i></li>
+                      <li>(make sure you don't include the [] brackets in any of these)</li>
+                        <li><i>export ANDROID_HOME=[Android SDK Path you just saved]</i></li>
+                        <li><i>export ANDROID_NDK_HOME=[Android NDK Path you just saved]</i></li>
+                        <li><i>export PATH=$PATH:$ANDROID_HOME/bin</i></li>
+                        <li><i>export PATH=$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK_HOME</i></li>
+                    </ul>
+                </li>
+                <li>Save the file</li>
+                <li>Close the previous terminal window and open a new one</li>
+                <li>ADB is automatically installed as well</li>
+            </ul>
+
+            <h4><u>> Prep Unity</u></h4>
+
+            <ul>
+              <li>Open Unity and sign in if you are prompted. Yes fill out that darn survey.</li>
+                <li>Open Unity and create a new project</li>
+                <li>Once your new (or existing) project opens, we need to set it to build for Android.</li>
+                <li>Go to <b>File > Build Settings</b></li>
+                <li>Ensure Android support is installed by selecting Android and then clicking <b>Switch Platform.</b> (If you did not add Android support when you first installed Unity, you will have to do so now, then restart Unity).</li>
+                <li><img src="images/support.png"></li>
+                <li>Close the Build Settings window.</li>
+                <li>Go to <b>Edit > Preferences</b></li>
+                <li>Click on the <b>External Tools</b> tab</li>
+                <li>Scroll down to the <b>Android</b> section</li>
+                <li>Set the SDK, JDK and NDK paths to what you copied to the text file in Step 4.</li>
+                <li>Close the Preferences window.</li>
+                <li>Go to the <b>Asset Store</b></li>
+                <li><img src="images/assetstore.png" style="width:750px;height:400px;"></li>
+                <li>Look up <b>Oculus Integration</b>.</li>
+                <li><img src="images/oculus_integration.png" style="width:750px;height:400px;"></li>
+                <li>Download and import.</li>
+                <li>Go to <b>Edit > Project Settings > Player</b></li>
+                <li>Click <b>Player Settings > XR Settings > Virtual Reality Supported</b></li>
+                <li>Add Oculus to the SDKs list</li>
+            </ul>
+
+            <h4>Feel free to play around with Unity, but we'll be going through it together in class!</h4>
           </div>
         </div>
       </div>
